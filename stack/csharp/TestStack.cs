@@ -3,6 +3,7 @@ using System;
 /// Tests implementations of IntegerStack.
 class TestStack {
   static void testStack_isLifo() {
+    Console.WriteLine("testStack_isLifo");
     IntegerStack s = new MyStack();
 
     s.push(3);
@@ -15,6 +16,7 @@ class TestStack {
   }
 
   static void testStackPeek_returnsLastPushed() {
+    Console.WriteLine("testStackPeek_returnsLastPushed");
     IntegerStack s = new MyStack();
 
     s.push(3);
@@ -28,6 +30,7 @@ class TestStack {
   }
 
   static void testStackPeek_doesNotRemoveElements() {
+    Console.WriteLine("testStackPeek_doesNotRemoveElements");
     IntegerStack s = new MyStack();
 
     s.push(3);
@@ -39,7 +42,8 @@ class TestStack {
     testEqual(s.peek(), 4);
   }
 
-  static void testStack_poppingEmptyThrowsException_1() {
+  static void testStack_poppingEmptyThrowsException() {
+    Console.WriteLine("testStack_poppingEmptyThrowsException");
     IntegerStack s = new MyStack();
     bool testPassed = false;
     try {
@@ -53,7 +57,8 @@ class TestStack {
     }
   }
 
-  static void testStack_peekingEmptyThrowsException_1() {
+  static void testStack_peekingEmptyThrowsException() {
+    Console.WriteLine("testStack_peekingEmptyThrowsException");
     IntegerStack s = new MyStack();
     bool testPassed = false;
     try {
@@ -77,6 +82,8 @@ class TestStack {
     testStack_isLifo();
     testStackPeek_returnsLastPushed();
     testStackPeek_doesNotRemoveElements();
+    testStack_poppingEmptyThrowsException();
+    testStack_peekingEmptyThrowsException();
 
     printGreen("Success!");
   }
